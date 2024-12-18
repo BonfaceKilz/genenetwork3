@@ -51,7 +51,7 @@ run the rqtl_wrapper script and return the results as JSON
         rqtl_wrapper_bool_kwargs=rqtl_bool_kwargs
     )
     import logging
-    logger = logging.basicConfig(__name__)
+    logger = logging.basicConfig(__name__, level=logging.INFO)
     logger.error("---------------------------------------")
     logger.error(rqtl_cmd.get('output_file'))
     logger.error(rqtl_cmd.get('rqtl_cmd'))
