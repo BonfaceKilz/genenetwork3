@@ -50,7 +50,12 @@ run the rqtl_wrapper script and return the results as JSON
         rqtl_wrapper_kwargs=rqtl_kwargs,
         rqtl_wrapper_bool_kwargs=rqtl_bool_kwargs
     )
-
+    import logging
+    logger = logging.basicConfig(__name__)
+    logger.error("---------------------------------------")
+    logger.error(rqtl_cmd.get('output_file'))
+    logger.error(rqtl_cmd.get('rqtl_cmd'))
+    logger.error("---------------------------------------")
     rqtl_output = {}
     if not os.path.isfile(os.path.join(current_app.config.get("TMPDIR"),
                                        "gn3", rqtl_cmd.get('output_file'))):
