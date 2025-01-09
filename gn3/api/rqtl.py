@@ -85,6 +85,8 @@ def compute():
         pass
     stream_ouput_file = os.path.join(current_app.config.get("TMPDIR"), f"{run_id}.txt")
 
+    with open("/tmp/cmd.txt", "w") as cmd:
+        cmd.write(rqtl_cmd.get("rqtl_cmd"))
     run_process(rqtl_cmd.get("rqtl_cmd").split(), stream_ouput_file, run_id)
 
     if "pairscan" in rqtl_bool_kwargs:
